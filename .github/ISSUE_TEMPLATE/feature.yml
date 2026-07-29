@@ -1,0 +1,30 @@
+name: 产品能力
+description: 提议或定义一项产品能力
+title: "[Feature] "
+labels:
+  - discovery
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 用户问题
+      description: 谁在什么场景下遇到了什么问题？
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: 预期结果
+      description: 用户完成后能获得什么结果？
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 证据与假设
+      description: 已知事实、数据来源和仍需验证的假设。
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收方式
+      description: 如何判断这项能力有效？
