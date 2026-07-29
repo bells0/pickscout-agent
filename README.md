@@ -1,4 +1,4 @@
-# Cross-border Opportunity Scout
+# PickScout Agent
 
 跨境商机探测与选品分析助手。
 
