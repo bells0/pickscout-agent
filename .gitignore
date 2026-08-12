@@ -22,6 +22,7 @@ __pycache__/
 # Data and local artifacts
 data/
 artifacts/
+output/
 *.db
 *.sqlite
 *.sqlite3

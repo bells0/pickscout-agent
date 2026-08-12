@@ -1,0 +1,44 @@
+{
+  "market": "Amazon US",
+  "currency": "USD",
+  "as_of": "2026-07-30",
+  "seller_constraints": {
+    "max_initial_cash_exposure": {
+      "value": "5000.00",
+      "source": "Illustrative CLI smoke-test input; replace with a user-confirmed single-SKU cash limit",
+      "as_of": "2026-07-30"
+    },
+    "max_lead_time_days": {
+      "value": 45,
+      "source": "Illustrative CLI smoke-test input; replace with a user-confirmed lead-time limit",
+      "as_of": "2026-07-30"
+    }
+  },
+  "candidate": {
+    "supplier_moq_units": {
+      "value": 500,
+      "source": "Illustrative CLI smoke-test input; replace with a dated supplier quotation",
+      "as_of": "2026-07-30"
+    },
+    "planned_order_quantity": {
+      "value": 600,
+      "source": "Illustrative CLI smoke-test input; replace with the user's planned pilot order",
+      "as_of": "2026-07-30"
+    },
+    "lead_time_days": {
+      "value": 35,
+      "source": "Illustrative CLI smoke-test input; replace with a dated supplier quotation",
+      "as_of": "2026-07-30"
+    },
+    "landed_product_cost_per_unit": {
+      "value": "6.25",
+      "source": "Illustrative CLI smoke-test input; replace with a sourced landed-cost calculation",
+      "as_of": "2026-07-30"
+    },
+    "other_initial_cash_cost": {
+      "value": "500.00",
+      "source": "Illustrative CLI smoke-test input; replace with sourced setup, sample, inspection, and launch cash costs",
+      "as_of": "2026-07-30"
+    }
+  }
+}
