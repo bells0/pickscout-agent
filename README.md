@@ -46,14 +46,13 @@
 
 `skills/pickscout-research/` 是自包含的 Codex Skill 发布包，包含运行入口、方法论、SOP、研究协议、任务模板和确定性计算脚本。
 
-仓库公开后，用户可以克隆仓库并将这个目录复制到自己的 Codex Skills 目录：
+仓库公开后，用户不需要手动克隆或复制目录。把下面的请求交给 Codex Agent：
 
-```bash
-git clone https://github.com/bells0/pickscout-agent.git
-cp -R pickscout-agent/skills/pickscout-research ~/.codex/skills/
-```
+> 请使用 `$skill-installer` 从 GitHub 仓库 `bells0/pickscout-agent` 的 `skills/pickscout-research` 路径安装这个 Skill。只安装这一个 Skill；完成后告诉我下一轮如何调用。
 
-随后在 Codex 中使用 `$pickscout-research`，并提供关键词、需求、细分类目、ASIN、URL、候选清单、供应商 offer 或已有研究产物。安装只需要这个 Skill 目录，不要求复制整个仓库，也不自动安装插件或 MCP。
+Agent 会调用标准 Skill Installer，把指定目录安装到用户的 Codex Skills 目录。安装完成后，在下一轮对话中使用 `$pickscout-research`，并提供关键词、需求、细分类目、ASIN、URL、候选清单、供应商 offer 或已有研究产物。
+
+手动克隆和复制只作为 Agent 安装不可用时的故障兜底，不作为标准安装流程。安装不要求复制整个仓库，也不自动安装插件或 MCP。
 
 当前发布包已经进入版本控制和本地验证流程；仓库正式公开前仍需确定开源许可证、检查第三方内容与敏感信息、确认 GitHub 可见性，并从干净目录完成一次安装验收。
 
