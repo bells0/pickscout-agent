@@ -14,6 +14,7 @@
 - [PickScout 方法论 v1](docs/pickscout-methodology-v1.md)
 - [标准操作程序（SOP）v1](docs/pickscout-sop-v1.md)
 - [PickScout Agent 分发决策](docs/decisions/0008-publish-distributable-pickscout-agent.md)
+- [公开迁移与历史保留决策](docs/decisions/0009-archive-private-incubation-and-publish-sanitized-history.md)
 - [研究协议 v0](docs/research-protocol-v0.md)
 - [全部任务上下文与经验总结](docs/thread-context-and-lessons-2026-08-13.md)
 - [早期产品简报](docs/product-brief.md)
@@ -54,7 +55,7 @@ Agent 会调用当前 Codex 的标准安装能力，把兼容适配器安装到�
 
 手动克隆和复制只作为 Agent 安装不可用时的故障兜底，不作为标准安装流程。安装不要求用户理解当前的 Skill 目录机制，也不自动安装插件或 MCP。
 
-当前发布包已经进入版本控制和本地验证流程；仓库正式公开前仍需确定开源许可证、检查第三方内容与敏感信息、确认 GitHub 可见性，并从干净目录完成一次安装验收。
+当前发布包已经进入版本控制和本地验证流程；公开前仍需完成全历史隐私审计、确认 GitHub 可见性，并从公开 GitHub 路径完成一次 Agent 安装验收。
 
 ## 仓库结构
 
@@ -114,4 +115,8 @@ python3 -m unittest discover -s tests -v
 
 ## 状态
 
-Open-source release candidate / License and public visibility pending
+Open-source release candidate / Apache-2.0 / Public migration in progress
+
+## License
+
+PickScout Agent is licensed under the [Apache License 2.0](LICENSE).
