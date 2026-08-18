@@ -25,4 +25,4 @@ NNNN-short-title.md
 - [0005：区分样品筛选与供应商履约能力](0005-separate-sample-screening-from-supplier-fulfillment.md)
 - [0006：供应商采购来源使用 1688](0006-use-1688-for-supplier-sourcing.md)
 - [0007：固定外层决策循环与动态研究内环](0007-fixed-outer-loop-dynamic-research-sop.md)
-- [0008：发布可分发的 PickScout Research Skill](0008-publish-distributable-pickscout-skill.md)
+- [0008：发布可分发的 PickScout Agent](0008-publish-distributable-pickscout-agent.md)

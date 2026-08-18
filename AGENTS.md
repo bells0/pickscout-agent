@@ -11,7 +11,7 @@
 当前 Git 仓库本身就是 PickScout 的运行、调试和研究工作台。
 
 - 所有 PickScout 专业规则、协议、模板、脚本和研究产物必须保存在本仓库内。
-- 可分发的 Skill 发布包固定保存在 `skills/pickscout-research/`；不创建 `.agents/skills/` 隐式项目 Skill，也不在其他路径维护第二份发布包。
+- PickScout Agent 的长期核心保存在根目录文档、模板和脚本中；当前 Codex 兼容适配器固定保存在 `adapters/codex/pickscout-agent/`，不得把适配器当作产品本体或在其他路径维护第二份分发包。
 - 不安装或修改用户级 Skill、插件、`~/.codex`、`~/.agents`、`$CODEX_HOME` 或其他仓库。
 - 未经用户明确同意，不创建或修改项目 `.codex/config.toml`，不新增 MCP 服务。
 - 不把 PickScout 行为复制到其他项目。
@@ -28,7 +28,7 @@
 4. `docs/pickscout-methodology-v1.md`
 5. `docs/pickscout-sop-v1.md`
 6. `docs/research-protocol-v0.md`
-7. `docs/decisions/0008-publish-distributable-pickscout-skill.md`
+7. `docs/decisions/0008-publish-distributable-pickscout-agent.md`
 8. `docs/product-brief.md`
 9. `CONTRIBUTING.md`
 
@@ -110,7 +110,7 @@ Agent 动态决定研究路径；以下内容应优先交给仓库内可复算�
 - 一项变更解决一个清晰问题。
 - 重要产品或架构变化写入 `docs/decisions/`。
 - 新能力必须说明用户问题、预期结果和验证方式。
-- 先用真实对话任务验证稳定流程，再决定是否沉淀模板、脚本、Skill 发布内容或项目级 MCP。
-- 修改发布包镜像范围内的文档、模板或脚本时，同步更新 `skills/pickscout-research/`，并运行发布包契约测试。
+- 先用真实对话任务验证稳定流程，再决定是否沉淀模板、脚本、Agent 分发内容或项目级 MCP。
+- 修改分发包镜像范围内的文档、模板或脚本时，同步更新 `adapters/codex/pickscout-agent/`，并运行分发包契约测试。
 - 修改后执行与风险相称的检查，并明确尚未验证的部分。
 - 当前确定性工具的完整回归命令是 `python3 -m unittest discover -s tests -v`。

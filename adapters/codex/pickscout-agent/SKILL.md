@@ -1,9 +1,9 @@
 ---
-name: pickscout-research
-description: Run evidence-first Amazon US FBA opportunity research, candidate comparison, sample screening, procurement economics, first-shipment planning, or post-launch review. Use when a user provides a product idea, keyword, category, ASIN, Amazon URL, candidate list, supplier offer, quote, sample result, or operating data and wants a traceable stage-specific recommendation. Also use to resume an existing PickScout task. Do not use for zero-seed whole-market scanning or to imply authorization for purchasing, payment, listing, shipment, or other external actions.
+name: pickscout-agent
+description: Operate PickScout Agent for evidence-first Amazon US FBA opportunity research, candidate comparison, sample screening, procurement economics, first-shipment planning, or post-launch review. Use when a user provides a product idea, keyword, category, ASIN, Amazon URL, candidate list, supplier offer, quote, sample result, or operating data and wants a traceable stage-specific recommendation. Also use to resume an existing PickScout task. Do not use for zero-seed whole-market scanning or to imply authorization for purchasing, payment, listing, shipment, or other external actions.
 ---
 
-# PickScout Research
+# PickScout Agent
 
 Turn an Amazon US FBA product idea into a falsifiable, reproducible, and user-authorized decision. Keep the outer decision loop fixed while choosing research queries, sources, and tools dynamically according to information value.
 

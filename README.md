@@ -13,7 +13,7 @@
 - [Codex 仓库级 Agent 决策](docs/decisions/0002-codex-conversation-first-agent.md)
 - [PickScout 方法论 v1](docs/pickscout-methodology-v1.md)
 - [标准操作程序（SOP）v1](docs/pickscout-sop-v1.md)
-- [可分发 Skill 决策](docs/decisions/0008-publish-distributable-pickscout-skill.md)
+- [PickScout Agent 分发决策](docs/decisions/0008-publish-distributable-pickscout-agent.md)
 - [研究协议 v0](docs/research-protocol-v0.md)
 - [全部任务上下文与经验总结](docs/thread-context-and-lessons-2026-08-13.md)
 - [早期产品简报](docs/product-brief.md)
@@ -42,17 +42,17 @@
 
 后续 Agent 从本仓库启动时会通过根目录 `AGENTS.md` 自动读取并遵循上述方法和 SOP。
 
-## 安装 PickScout Research Skill
+## 通过 Agent 安装 PickScout Agent
 
-`skills/pickscout-research/` 是自包含的 Codex Skill 发布包，包含运行入口、方法论、SOP、研究协议、任务模板和确定性计算脚本。
+PickScout Agent 的长期核心是本仓库中的方法论、SOP、研究协议、任务模板和确定性计算脚本。`adapters/codex/pickscout-agent/` 只是当前 Codex 可识别的兼容适配器；未来运行时变化时可以替换适配器，而不改变 PickScout Agent 本身。
 
 仓库公开后，用户不需要手动克隆或复制目录。把下面的请求交给 Codex Agent：
 
-> 请使用 `$skill-installer` 从 GitHub 仓库 `bells0/pickscout-agent` 的 `skills/pickscout-research` 路径安装这个 Skill。只安装这一个 Skill；完成后告诉我下一轮如何调用。
+> 请使用 `$skill-installer` 从 GitHub 仓库 `bells0/pickscout-agent` 的 `adapters/codex/pickscout-agent` 路径安装 PickScout Agent。只安装这一个 Agent 适配器；完成后告诉我下一轮如何调用。
 
-Agent 会调用标准 Skill Installer，把指定目录安装到用户的 Codex Skills 目录。安装完成后，在下一轮对话中使用 `$pickscout-research`，并提供关键词、需求、细分类目、ASIN、URL、候选清单、供应商 offer 或已有研究产物。
+Agent 会调用当前 Codex 的标准安装能力，把兼容适配器安装到用户环境。安装完成后，在下一轮对话中使用 `$pickscout-agent`，并提供关键词、需求、细分类目、ASIN、URL、候选清单、供应商 offer 或已有研究产物。
 
-手动克隆和复制只作为 Agent 安装不可用时的故障兜底，不作为标准安装流程。安装不要求复制整个仓库，也不自动安装插件或 MCP。
+手动克隆和复制只作为 Agent 安装不可用时的故障兜底，不作为标准安装流程。安装不要求用户理解当前的 Skill 目录机制，也不自动安装插件或 MCP。
 
 当前发布包已经进入版本控制和本地验证流程；仓库正式公开前仍需确定开源许可证、检查第三方内容与敏感信息、确认 GitHub 可见性，并从干净目录完成一次安装验收。
 
@@ -72,8 +72,9 @@ Agent 会调用标准 Skill Installer，把指定目录安装到用户的 Codex 
 │   └── product-requirements-v0.md
 ├── templates/            # 卖家画像、简报、证据、报告和决定模板
 ├── scripts/              # 确定性计算与校验工具
-├── skills/
-│   └── pickscout-research/ # 可安装、自包含的 Skill 发布包
+├── adapters/
+│   └── codex/
+│       └── pickscout-agent/ # 当前 Codex 的兼容安装入口
 ├── tests/                # 确定性工具回归测试
 ├── .editorconfig
 ├── .env.example

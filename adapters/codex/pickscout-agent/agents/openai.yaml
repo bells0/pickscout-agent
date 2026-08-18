@@ -1,4 +1,4 @@
 interface:
-  display_name: "PickScout Research"
+  display_name: "PickScout Agent"
   short_description: "Evidence-first Amazon US FBA product research"
-  default_prompt: "Use $pickscout-research to evaluate an Amazon US FBA product opportunity with sourced evidence, explicit uncertainty, and a stage-specific recommendation."
+  default_prompt: "Use $pickscout-agent to evaluate an Amazon US FBA product opportunity with sourced evidence, explicit uncertainty, and a stage-specific recommendation."

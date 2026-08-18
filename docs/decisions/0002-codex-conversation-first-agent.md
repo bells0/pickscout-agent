@@ -2,7 +2,7 @@
 
 - 状态：accepted
 - 日期：2026-07-30
-- 后续：关于不创建 Skill 发布包的部分已由 [0008](0008-publish-distributable-pickscout-skill.md) 取代；仓库级运行与隔离原则继续有效。
+- 后续：关于不创建可分发 Agent 兼容包的部分已由 [0008](0008-publish-distributable-pickscout-agent.md) 取代；仓库级运行与隔离原则继续有效。
 
 ## 背景
 
