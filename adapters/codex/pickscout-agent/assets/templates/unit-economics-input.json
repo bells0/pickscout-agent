@@ -1,0 +1,159 @@
+{
+  "market": "Amazon US",
+  "currency": "USD",
+  "as_of": "2026-07-30",
+  "freshness_days": {
+    "selling_price": 30,
+    "referral_fee": 30,
+    "fba_fulfillment_fee": 30,
+    "inbound_shipping": 30,
+    "storage": 30,
+    "landed_product_cost": 30,
+    "advertising": 30,
+    "returns_and_losses": 30,
+    "taxes_and_fx": 30
+  },
+  "scenarios": {
+    "pessimistic": {
+      "selling_price": {
+        "amount": "24.99",
+        "source": "Illustrative CLI smoke-test input; replace with dated market evidence",
+        "as_of": "2026-07-30"
+      },
+      "referral_fee": {
+        "amount": "3.75",
+        "source": "Illustrative CLI smoke-test input; replace with a sourced fee calculation",
+        "as_of": "2026-07-30"
+      },
+      "fba_fulfillment_fee": {
+        "amount": "5.50",
+        "source": "Illustrative CLI smoke-test input; replace with a sourced fee calculation",
+        "as_of": "2026-07-30"
+      },
+      "inbound_shipping": {
+        "amount": "0.80",
+        "source": "Illustrative CLI smoke-test input; replace with a supplier or carrier quote",
+        "as_of": "2026-07-30"
+      },
+      "storage": {
+        "amount": "0.35",
+        "source": "Illustrative CLI smoke-test input; replace with a sourced storage estimate",
+        "as_of": "2026-07-30"
+      },
+      "landed_product_cost": {
+        "amount": "7.20",
+        "source": "Illustrative CLI smoke-test input; replace with a landed supplier quote",
+        "as_of": "2026-07-30"
+      },
+      "advertising": {
+        "amount": "4.50",
+        "source": "Illustrative CLI smoke-test input; replace with an explicit advertising assumption",
+        "as_of": "2026-07-30"
+      },
+      "returns_and_losses": {
+        "amount": "1.25",
+        "source": "Illustrative CLI smoke-test input; replace with an explicit reserve assumption",
+        "as_of": "2026-07-30"
+      },
+      "taxes_and_fx": {
+        "amount": "0.60",
+        "source": "Illustrative CLI smoke-test input; replace with an explicit tax and FX assumption",
+        "as_of": "2026-07-30"
+      }
+    },
+    "base": {
+      "selling_price": {
+        "amount": "27.99",
+        "source": "Illustrative CLI smoke-test input; replace with dated market evidence",
+        "as_of": "2026-07-30"
+      },
+      "referral_fee": {
+        "amount": "4.20",
+        "source": "Illustrative CLI smoke-test input; replace with a sourced fee calculation",
+        "as_of": "2026-07-30"
+      },
+      "fba_fulfillment_fee": {
+        "amount": "5.20",
+        "source": "Illustrative CLI smoke-test input; replace with a sourced fee calculation",
+        "as_of": "2026-07-30"
+      },
+      "inbound_shipping": {
+        "amount": "0.70",
+        "source": "Illustrative CLI smoke-test input; replace with a supplier or carrier quote",
+        "as_of": "2026-07-30"
+      },
+      "storage": {
+        "amount": "0.25",
+        "source": "Illustrative CLI smoke-test input; replace with a sourced storage estimate",
+        "as_of": "2026-07-30"
+      },
+      "landed_product_cost": {
+        "amount": "6.50",
+        "source": "Illustrative CLI smoke-test input; replace with a landed supplier quote",
+        "as_of": "2026-07-30"
+      },
+      "advertising": {
+        "amount": "3.25",
+        "source": "Illustrative CLI smoke-test input; replace with an explicit advertising assumption",
+        "as_of": "2026-07-30"
+      },
+      "returns_and_losses": {
+        "amount": "0.75",
+        "source": "Illustrative CLI smoke-test input; replace with an explicit reserve assumption",
+        "as_of": "2026-07-30"
+      },
+      "taxes_and_fx": {
+        "amount": "0.45",
+        "source": "Illustrative CLI smoke-test input; replace with an explicit tax and FX assumption",
+        "as_of": "2026-07-30"
+      }
+    },
+    "optimistic": {
+      "selling_price": {
+        "amount": "29.99",
+        "source": "Illustrative CLI smoke-test input; replace with dated market evidence",
+        "as_of": "2026-07-30"
+      },
+      "referral_fee": {
+        "amount": "4.50",
+        "source": "Illustrative CLI smoke-test input; replace with a sourced fee calculation",
+        "as_of": "2026-07-30"
+      },
+      "fba_fulfillment_fee": {
+        "amount": "5.00",
+        "source": "Illustrative CLI smoke-test input; replace with a sourced fee calculation",
+        "as_of": "2026-07-30"
+      },
+      "inbound_shipping": {
+        "amount": "0.60",
+        "source": "Illustrative CLI smoke-test input; replace with a supplier or carrier quote",
+        "as_of": "2026-07-30"
+      },
+      "storage": {
+        "amount": "0.20",
+        "source": "Illustrative CLI smoke-test input; replace with a sourced storage estimate",
+        "as_of": "2026-07-30"
+      },
+      "landed_product_cost": {
+        "amount": "6.00",
+        "source": "Illustrative CLI smoke-test input; replace with a landed supplier quote",
+        "as_of": "2026-07-30"
+      },
+      "advertising": {
+        "amount": "2.40",
+        "source": "Illustrative CLI smoke-test input; replace with an explicit advertising assumption",
+        "as_of": "2026-07-30"
+      },
+      "returns_and_losses": {
+        "amount": "0.45",
+        "source": "Illustrative CLI smoke-test input; replace with an explicit reserve assumption",
+        "as_of": "2026-07-30"
+      },
+      "taxes_and_fx": {
+        "amount": "0.35",
+        "source": "Illustrative CLI smoke-test input; replace with an explicit tax and FX assumption",
+        "as_of": "2026-07-30"
+      }
+    }
+  }
+}

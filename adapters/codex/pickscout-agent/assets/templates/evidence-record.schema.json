@@ -1,0 +1,529 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pickscout.local/schemas/evidence-record-v0.schema.json",
+  "title": "PickScout Evidence Record v0",
+  "description": "A single versioned evidence record linked to one research task, candidate, and claim.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidence_id",
+    "task_id",
+    "candidate_id",
+    "claim_id",
+    "signal_type",
+    "source_family",
+    "independence_basis",
+    "decision_impact",
+    "source",
+    "timing",
+    "scope",
+    "extraction",
+    "quality",
+    "stance",
+    "conflict",
+    "version",
+    "record_status"
+  ],
+  "properties": {
+    "evidence_id": {
+      "$ref": "#/$defs/id"
+    },
+    "task_id": {
+      "$ref": "#/$defs/id"
+    },
+    "candidate_id": {
+      "description": "Stable candidate ID, or null only when the evidence applies to the entire task.",
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "claim_id": {
+      "$ref": "#/$defs/id"
+    },
+    "signal_type": {
+      "type": "string",
+      "enum": [
+        "amazon_demand_behavior",
+        "off_amazon_search_interest",
+        "price_bsr_offer_history",
+        "competition_structure",
+        "consumer_feedback_returns",
+        "unit_economics",
+        "supply_chain_fulfillment",
+        "compliance_ip"
+      ]
+    },
+    "source_family": {
+      "type": "string",
+      "enum": [
+        "amazon_official_or_authorized",
+        "regulator_or_standards",
+        "licensed_third_party_structured",
+        "user_owned_operating_data",
+        "supplier_logistics_testing",
+        "public_industry_research",
+        "community_or_personal_experience"
+      ]
+    },
+    "independence_basis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assessment",
+        "upstream_origin",
+        "compared_with_evidence_ids",
+        "shared_upstream_evidence_ids",
+        "rationale"
+      ],
+      "properties": {
+        "assessment": {
+          "type": "string",
+          "enum": [
+            "independent",
+            "not_independent"
+          ]
+        },
+        "upstream_origin": {
+          "type": "string",
+          "minLength": 1
+        },
+        "compared_with_evidence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "shared_upstream_evidence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "rationale": {
+          "description": "If independence cannot be established, assessment must be not_independent and the reason is recorded here.",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "decision_impact": {
+      "type": "string",
+      "enum": [
+        "hard_gate",
+        "status_change",
+        "confidence_only",
+        "context_only"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_kind",
+        "publisher",
+        "title",
+        "locator",
+        "usage_restrictions"
+      ],
+      "properties": {
+        "source_kind": {
+          "type": "string",
+          "enum": [
+            "official_page",
+            "authorized_export",
+            "licensed_dataset",
+            "user_input",
+            "uploaded_file",
+            "supplier_document",
+            "public_webpage",
+            "community_post",
+            "other"
+          ]
+        },
+        "publisher": {
+          "type": "string",
+          "minLength": 1
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "description": "URL or repository-relative reference to a Git-ignored source or snapshot.",
+          "type": "string",
+          "minLength": 1
+        },
+        "usage_restrictions": {
+          "description": "License, confidentiality, quotation, redistribution, or access limits; use none when unrestricted.",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "timing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "published_at",
+        "collected_at",
+        "observed_from",
+        "observed_to",
+        "freshness_status",
+        "freshness_basis"
+      ],
+      "properties": {
+        "published_at": {
+          "$ref": "#/$defs/nullableDateTime"
+        },
+        "collected_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "observed_from": {
+          "$ref": "#/$defs/nullableDate"
+        },
+        "observed_to": {
+          "$ref": "#/$defs/nullableDate"
+        },
+        "freshness_status": {
+          "type": "string",
+          "enum": [
+            "fresh",
+            "stale",
+            "unknown"
+          ]
+        },
+        "freshness_basis": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "market",
+        "channel",
+        "product_or_population",
+        "metric_definition",
+        "unit",
+        "denominator",
+        "inclusions",
+        "exclusions"
+      ],
+      "properties": {
+        "market": {
+          "type": "string",
+          "minLength": 1
+        },
+        "channel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "product_or_population": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metric_definition": {
+          "description": "Metric or qualitative observation definition and calculation basis.",
+          "type": "string",
+          "minLength": 1
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "denominator": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "inclusions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "extraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "content_type",
+        "content",
+        "method",
+        "tool_name",
+        "tool_or_model_version",
+        "extracted_at",
+        "snapshot_ref",
+        "content_hash",
+        "language",
+        "transformation_notes"
+      ],
+      "properties": {
+        "content_type": {
+          "type": "string",
+          "enum": [
+            "verbatim_quote",
+            "data_point",
+            "user_statement",
+            "document_observation"
+          ]
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "manual",
+            "browser",
+            "file_import",
+            "api",
+            "deterministic_script",
+            "other"
+          ]
+        },
+        "tool_name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tool_or_model_version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "extracted_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "snapshot_ref": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "content_hash": {
+          "description": "SHA-256 of the raw quoted or observed content, formatted as sha256:<64 lowercase hex characters>.",
+          "type": "string",
+          "pattern": "^sha256:[a-f0-9]{64}$"
+        },
+        "language": {
+          "type": "string",
+          "minLength": 2
+        },
+        "transformation_notes": {
+          "description": "Translation, normalization, aggregation, or none.",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relevance",
+        "authority",
+        "freshness",
+        "directness",
+        "completeness",
+        "consistency",
+        "actionability",
+        "overall"
+      ],
+      "properties": {
+        "relevance": {
+          "$ref": "#/$defs/qualityDimension"
+        },
+        "authority": {
+          "$ref": "#/$defs/qualityDimension"
+        },
+        "freshness": {
+          "$ref": "#/$defs/qualityDimension"
+        },
+        "directness": {
+          "$ref": "#/$defs/qualityDimension"
+        },
+        "completeness": {
+          "$ref": "#/$defs/qualityDimension"
+        },
+        "consistency": {
+          "$ref": "#/$defs/qualityDimension"
+        },
+        "actionability": {
+          "$ref": "#/$defs/qualityDimension"
+        },
+        "overall": {
+          "$ref": "#/$defs/qualityDimension"
+        }
+      }
+    },
+    "stance": {
+      "type": "string",
+      "enum": [
+        "supports",
+        "opposes",
+        "neutral"
+      ]
+    },
+    "conflict": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group_id",
+        "status",
+        "related_evidence_ids",
+        "explanation"
+      ],
+      "properties": {
+        "group_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "none",
+            "open",
+            "explained",
+            "escalated",
+            "resolved"
+          ]
+        },
+        "related_evidence_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "uniqueItems": true
+        },
+        "explanation": {
+          "description": "Use none when status is none; otherwise record the differing scopes, methods, or unresolved issue.",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "version": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_version",
+        "recorded_at",
+        "supersedes_record_version",
+        "change_reason"
+      ],
+      "properties": {
+        "record_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "recorded_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "supersedes_record_version": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "change_reason": {
+          "description": "Use initial_record for the first version.",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "record_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "superseded",
+        "invalidated"
+      ]
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._:-]*$"
+    },
+    "nullableDate": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "nullableDateTime": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "qualityDimension": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "rating",
+        "rationale"
+      ],
+      "properties": {
+        "rating": {
+          "type": "string",
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

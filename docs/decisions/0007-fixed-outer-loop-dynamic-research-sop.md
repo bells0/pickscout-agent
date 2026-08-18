@@ -2,6 +2,7 @@
 
 - 状态：accepted
 - 日期：2026-08-13
+- 后续：关于不创建 Skill 发布包的部分已由 [0008](0008-publish-distributable-pickscout-skill.md) 取代；固定外环、动态内环的决策继续有效。
 
 ## 背景
 

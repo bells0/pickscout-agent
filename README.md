@@ -13,6 +13,7 @@
 - [Codex 仓库级 Agent 决策](docs/decisions/0002-codex-conversation-first-agent.md)
 - [PickScout 方法论 v1](docs/pickscout-methodology-v1.md)
 - [标准操作程序（SOP）v1](docs/pickscout-sop-v1.md)
+- [可分发 Skill 决策](docs/decisions/0008-publish-distributable-pickscout-skill.md)
 - [研究协议 v0](docs/research-protocol-v0.md)
 - [全部任务上下文与经验总结](docs/thread-context-and-lessons-2026-08-13.md)
 - [早期产品简报](docs/product-brief.md)
@@ -41,6 +42,21 @@
 
 后续 Agent 从本仓库启动时会通过根目录 `AGENTS.md` 自动读取并遵循上述方法和 SOP。
 
+## 安装 PickScout Research Skill
+
+`skills/pickscout-research/` 是自包含的 Codex Skill 发布包，包含运行入口、方法论、SOP、研究协议、任务模板和确定性计算脚本。
+
+仓库公开后，用户可以克隆仓库并将这个目录复制到自己的 Codex Skills 目录：
+
+```bash
+git clone https://github.com/bells0/pickscout-agent.git
+cp -R pickscout-agent/skills/pickscout-research ~/.codex/skills/
+```
+
+随后在 Codex 中使用 `$pickscout-research`，并提供关键词、需求、细分类目、ASIN、URL、候选清单、供应商 offer 或已有研究产物。安装只需要这个 Skill 目录，不要求复制整个仓库，也不自动安装插件或 MCP。
+
+当前发布包已经进入版本控制和本地验证流程；仓库正式公开前仍需确定开源许可证、检查第三方内容与敏感信息、确认 GitHub 可见性，并从干净目录完成一次安装验收。
+
 ## 仓库结构
 
 ```text
@@ -57,6 +73,8 @@
 │   └── product-requirements-v0.md
 ├── templates/            # 卖家画像、简报、证据、报告和决定模板
 ├── scripts/              # 确定性计算与校验工具
+├── skills/
+│   └── pickscout-research/ # 可安装、自包含的 Skill 发布包
 ├── tests/                # 确定性工具回归测试
 ├── .editorconfig
 ├── .env.example
@@ -96,4 +114,4 @@ python3 -m unittest discover -s tests -v
 
 ## 状态
 
-Private / Product validation
+Open-source release candidate / License and public visibility pending
