@@ -6,7 +6,7 @@
 
 ## 当前阶段
 
-项目已完成第一轮方向调研，并具备首轮真实候选试点能力。v0 直接运行在 Codex 对话中，聚焦个人卖家的 Amazon US FBA 选品前研究，以“Agent 动态研究、证据与计算工具支撑、用户最终决策”为核心工作流。
+项目已形成可运行的 v0 方法论、SOP、模板、确定性工具和 Codex 兼容适配器。v0 直接运行在 Codex 对话中，聚焦个人卖家的 Amazon US FBA 选品前研究，以“Agent 动态研究、证据与计算工具支撑、用户最终决策”为核心工作流。
 
 - [v0 产品需求文档](docs/product-requirements-v0.md)
 - [产品方向决策](docs/decisions/0001-amazon-us-fba-evidence-first.md)
@@ -16,8 +16,6 @@
 - [PickScout Agent 分发决策](docs/decisions/0008-publish-distributable-pickscout-agent.md)
 - [公开迁移与历史保留决策](docs/decisions/0009-archive-private-incubation-and-publish-sanitized-history.md)
 - [研究协议 v0](docs/research-protocol-v0.md)
-- [全部任务上下文与经验总结](docs/thread-context-and-lessons-2026-08-13.md)
-- [早期产品简报](docs/product-brief.md)
 
 ## 初步能力方向
 
@@ -47,7 +45,7 @@
 
 PickScout Agent 的长期核心是本仓库中的方法论、SOP、研究协议、任务模板和确定性计算脚本。`adapters/codex/pickscout-agent/` 只是当前 Codex 可识别的兼容适配器；未来运行时变化时可以替换适配器，而不改变 PickScout Agent 本身。
 
-仓库公开后，用户不需要手动克隆或复制目录。把下面的请求交给 Codex Agent：
+用户不需要手动克隆或复制目录。把下面的请求交给 Codex Agent：
 
 > 请使用 `$skill-installer` 从 GitHub 仓库 `bells0/pickscout-agent` 的 `adapters/codex/pickscout-agent` 路径安装 PickScout Agent。只安装这一个 Agent 适配器；完成后告诉我下一轮如何调用。
 
@@ -55,7 +53,7 @@ Agent 会调用当前 Codex 的标准安装能力，把兼容适配器安装到�
 
 手动克隆和复制只作为 Agent 安装不可用时的故障兜底，不作为标准安装流程。安装不要求用户理解当前的 Skill 目录机制，也不自动安装插件或 MCP。
 
-当前发布包已经进入版本控制和本地验证流程；公开前仍需完成全历史隐私审计、确认 GitHub 可见性，并从公开 GitHub 路径完成一次 Agent 安装验收。
+发布适配器与根目录事实来源保持契约测试，并通过公开 GitHub 路径执行安装验收。
 
 ## 仓库结构
 
@@ -65,11 +63,9 @@ Agent 会调用当前 Codex 的标准安装能力，把兼容适配器安装到�
 ├── .github/              # GitHub 协作模板
 ├── docs/
 │   ├── decisions/        # 架构与产品决策记录
-│   ├── plans/            # 可执行实施计划
 │   ├── pickscout-methodology-v1.md
 │   ├── pickscout-sop-v1.md
 │   ├── research-protocol-v0.md
-│   ├── product-brief.md  # 早期产品问题与假设
 │   └── product-requirements-v0.md
 ├── templates/            # 卖家画像、简报、证据、报告和决定模板
 ├── scripts/              # 确定性计算与校验工具
@@ -106,16 +102,16 @@ python3 -m unittest discover -s tests -v
 
 示例 JSON 中的金额、数量和交期仅用于工具冒烟测试，不能直接作为真实候选的经营数据。单位经济输入会按逐项日期和配置的新鲜度阈值拒绝过期数据；供应硬门槛缺少关键输入时输出 `unknown`，不会猜测。
 
-## 后续验证
+## 项目演进
 
-1. 确认首位用户的经营模式、资金范围、账号权限和现有数据源。
-2. 从第一个真实种子开始，完成 10 个候选的对话式决策档案。
-3. 验证哪些证据最能改变决定，以及哪些稳定约束应沉淀到仓库规则与研究协议。
-4. 根据试点结果迭代根目录 `AGENTS.md`、模板和确定性脚本。
+1. 使用有明确研究种子和授权边界的真实任务持续验证工作流。
+2. 识别最能改变经营决定的证据，并把稳定约束沉淀到仓库规则与研究协议。
+3. 根据复盘结果迭代根目录 `AGENTS.md`、模板、确定性脚本和运行时适配器。
+4. 通过 Issues 和 Pull Requests 讨论可复用的改进，不提交个人研究数据或凭据。
 
 ## 状态
 
-Open-source release candidate / Apache-2.0 / Public migration in progress
+Open source / Apache-2.0
 
 ## License
 

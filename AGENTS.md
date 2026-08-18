@@ -30,8 +30,7 @@
 6. `docs/research-protocol-v0.md`
 7. `docs/decisions/0008-publish-distributable-pickscout-agent.md`
 8. `docs/decisions/0009-archive-private-incubation-and-publish-sanitized-history.md`
-9. `docs/product-brief.md`
-10. `CONTRIBUTING.md`
+9. `CONTRIBUTING.md`
 
 用户当前明确指令优先于仓库文档。出现方向变化时，更新 PRD 或决策记录，避免关键结论只存在于对话中。
 

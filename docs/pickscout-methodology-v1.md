@@ -249,5 +249,5 @@ PickScout 不负责猜中“爆款”，而是把一个模糊想法逐步转化�
 
 - 操作步骤：[PickScout 标准操作程序 v1](pickscout-sop-v1.md)
 - 证据与充分性：[研究协议 v0](research-protocol-v0.md)
-- 任务运行清单：[task-run-checklist.md](../templates/task-run-checklist.md)
-- 项目经验来源：[全部任务上下文与经验总结](thread-context-and-lessons-2026-08-13.md)
+- 任务运行清单：[task-run-checklist.md](https://github.com/bells0/pickscout-agent/blob/main/templates/task-run-checklist.md)
+- 方法来源：经真实任务验证后沉淀的公开方法与协议。
