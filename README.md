@@ -16,6 +16,7 @@
 - [PickScout Agent 分发决策](docs/decisions/0008-publish-distributable-pickscout-agent.md)
 - [公开迁移与历史保留决策](docs/decisions/0009-archive-private-incubation-and-publish-sanitized-history.md)
 - [研究协议 v0](docs/research-protocol-v0.md)
+- [参与开发与贡献指南](CONTRIBUTING.md)
 
 ## 初步能力方向
 
@@ -101,6 +102,10 @@ python3 -m unittest discover -s tests -v
 ```
 
 示例 JSON 中的金额、数量和交期仅用于工具冒烟测试，不能直接作为真实候选的经营数据。单位经济输入会按逐项日期和配置的新鲜度阈值拒绝过期数据；供应硬门槛缺少关键输入时输出 `unknown`，不会猜测。
+
+## 参与开发
+
+可复用改进从一个已确认问题、范围和验收方式的 Issue 开始。从最新的 `main` 创建独立分支或 worktree，禁止直接向 `main` 提交；一个 Pull Request 只解决一个 Issue，并由其他成员 Review 后再合并。详细的 Issue-to-PR 流程、验证证据和安全边界见 [贡献指南](CONTRIBUTING.md)。
 
 ## 项目演进
 
