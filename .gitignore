@@ -22,6 +22,8 @@ __pycache__/
 # Data and local artifacts
 data/
 artifacts/
+# Optional local research skill; its source is maintained in the user's workspace.
+/.agents/skills/amazon-category-opportunity-research
 output/
 *.db
 *.sqlite

@@ -42,6 +42,12 @@
 
 后续 Agent 从本仓库启动时会通过根目录 `AGENTS.md` 自动读取并遵循上述方法和 SOP。
 
+## 可选的品类与竞品研究方法
+
+品类、竞品、关键词、趋势及用户需求研究可按 [SOP 第 1.1 节](docs/pickscout-sop-v1.md#11-按需复用品类与机会研究-skill) 读取当前工作区可用的 `amazon-category-opportunity-research`。项目内入口为 `.agents/skills/amazon-category-opportunity-research/SKILL.md`，可以用目录链接直接引用用户已接入的源 Skill，避免复制正文或维护第二份方法。
+
+PickScout 保留完整 A–G 选品流程、任务记录、模板及计算脚本；没有该 Skill 时也能独立运行。源仓库入口与 Codex 适配器都已接入此规则，不需要全局安装、插件或新增助手。本机目录链接被 Git 忽略，不随公开适配器分发。设计边界见 [决策 0013](docs/decisions/0013-optional-category-research-skill.md)。
+
 ## 通过 Agent 安装 PickScout Agent
 
 PickScout Agent 的长期核心是本仓库中的方法论、SOP、研究协议、任务模板和确定性计算脚本。`adapters/codex/pickscout-agent/` 只是当前 Codex 可识别的兼容适配器；未来运行时变化时可以替换适配器，而不改变 PickScout Agent 本身。
