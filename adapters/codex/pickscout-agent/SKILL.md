@@ -19,6 +19,7 @@ Classify the request before creating files:
 
 For substantive research, read `references/pickscout-methodology-v1.md`. Also read:
 
+- `references/pickscout-sop-v1.md` section 1.1 for category, competitor, keyword, trend, customer-need, or reference-product research: read and reuse the available `amazon-category-opportunity-research` Skill in the same task; if it is absent, continue with the bundled method. This is optional and does not change the A–G workflow, calculators, or authorization boundaries;
 - `references/pickscout-sop-v1.md` for a multi-step or resumed task;
 - `references/research-protocol-v0.md` when collecting, evaluating, or deciding whether evidence is sufficient;
 - only the templates needed from `assets/templates/`;

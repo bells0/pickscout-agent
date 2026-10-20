@@ -24,3 +24,4 @@ NNNN-short-title.md
 - [0007：固定外层决策循环与动态研究内环](0007-fixed-outer-loop-dynamic-research-sop.md)
 - [0008：发布可分发的 PickScout Agent](0008-publish-distributable-pickscout-agent.md)
 - [0009：归档私有孵化仓库并发布脱敏历史](0009-archive-private-incubation-and-publish-sanitized-history.md)
+- [0013：按需读取外部品类研究 Skill，保留完整选品流程](0013-optional-category-research-skill.md)
