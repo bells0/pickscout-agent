@@ -16,6 +16,27 @@ MIRRORED_FILES = {
     REPO_ROOT / "docs" / "research-protocol-v0.md": (
         ADAPTER_ROOT / "references" / "research-protocol-v0.md"
     ),
+    REPO_ROOT / "docs" / "market-research-v1.md": (
+        ADAPTER_ROOT / "references" / "market-research-v1.md"
+    ),
+    REPO_ROOT / "docs" / "market-research-one-page.md": (
+        ADAPTER_ROOT / "references" / "market-research-one-page.md"
+    ),
+    REPO_ROOT / "docs" / "selection-team.md": (
+        ADAPTER_ROOT / "references" / "selection-team.md"
+    ),
+    REPO_ROOT / "docs" / "decisions" / "0011-single-selection-specialist.md": (
+        ADAPTER_ROOT / "references" / "decisions" / "0011-single-selection-specialist.md"
+    ),
+    REPO_ROOT / "docs" / "decisions" / "0015-judgment-and-user-controlled-collaboration.md": (
+        ADAPTER_ROOT / "references" / "decisions" / "0015-judgment-and-user-controlled-collaboration.md"
+    ),
+    REPO_ROOT / "docs" / "decisions" / "0016-ranking-current-brief-client-review.md": (
+        ADAPTER_ROOT / "references" / "decisions" / "0016-ranking-current-brief-client-review.md"
+    ),
+    REPO_ROOT / "docs" / "decisions" / "0014-pickscout-owned-market-research.md": (
+        ADAPTER_ROOT / "references" / "decisions" / "0014-pickscout-owned-market-research.md"
+    ),
     REPO_ROOT / "scripts" / "unit_economics.py": (
         ADAPTER_ROOT / "scripts" / "unit_economics.py"
     ),

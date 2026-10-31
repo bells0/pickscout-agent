@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazon 品类与机会研究专家"
+  short_description: "结合数据和商业判断研究 Amazon 市场、竞品与需求，给出明确取舍"
+  default_prompt: "使用 $amazon-category-opportunity-research 按 PickScout 美国站流程研究指定产品或类目，复用已有资料，结合数据与专业判断给出推荐顺序、理由和下一步，交付来源清楚、可独立阅读的报告。"

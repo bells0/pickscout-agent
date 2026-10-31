@@ -20,10 +20,12 @@ __pycache__/
 .ruff_cache/
 
 # Data and local artifacts
+.agent-teamworks/
 data/
 artifacts/
-# Optional local research skill; its source is maintained in the user's workspace.
+# Local discovery link; canonical source is skills/amazon-category-opportunity-research/.
 /.agents/skills/amazon-category-opportunity-research
+采购清单/
 output/
 *.db
 *.sqlite
