@@ -17,6 +17,7 @@
 - [公开迁移与历史保留决策](docs/decisions/0009-archive-private-incubation-and-publish-sanitized-history.md)
 - [研究协议 v0](docs/research-protocol-v0.md)
 - [参与开发与贡献指南](CONTRIBUTING.md)
+- [选品专员职责](docs/selection-team.md)
 
 ## 初步能力方向
 
@@ -35,18 +36,26 @@
 1. 阅读 [PickScout 方法论 v1](docs/pickscout-methodology-v1.md)，理解 A–G 决策阶段和证据边界。
 2. 按 [标准操作程序 v1](docs/pickscout-sop-v1.md) 先明确本轮只支持哪一个经营决定。
 3. 新任务从 `templates/` 复制卖家画像、研究简报和 [任务运行清单](templates/task-run-checklist.md) 到 `artifacts/<task-id>/`；只读解释不创建空任务目录。
-4. 先建立同口径最低证据包，再让 Agent 动态解决最高价值未知项。
+4. 先复用可比证据，再让Agent解决最高价值未知项。统计排名按同口径数据计算；商业推荐顺序可以由专业取舍形成，不以固定ASIN数量阻止建议。
 5. 需要时用仓库脚本完成三情景单位经济和供应硬门槛。
 6. 每个改变后续行动的节点更新任务决策日志和跨任务总进度。
 7. 用户明确决定和外部动作授权分别记录；未经授权不联系、下单、付款、订舱或修改 Amazon 数据。
 
 后续 Agent 从本仓库启动时会通过根目录 `AGENTS.md` 自动读取并遵循上述方法和 SOP。
 
-## 可选的品类与竞品研究方法
+## 产品与品类市场研究
 
-品类、竞品、关键词、趋势及用户需求研究可按 [SOP 第 1.1 节](docs/pickscout-sop-v1.md#11-按需复用品类与机会研究-skill) 读取当前工作区可用的 `amazon-category-opportunity-research`。项目内入口为 `.agents/skills/amazon-category-opportunity-research/SKILL.md`，可以用目录链接直接引用用户已接入的源 Skill，避免复制正文或维护第二份方法。
+先看 [一页方法论与调用语句](docs/market-research-one-page.md)，详细执行 [八步研究规范](docs/market-research-v1.md)：界定市场→初筛方向→采集核对→需求趋势→竞争新品→关键词与买家需求→价格及进入条件→九章报告。用六维证据与反证形成建议，默认本地 HTML 主报告；表格、截图和用户指定交付格式均可使用。
 
-PickScout 保留完整 A–G 选品流程、任务记录、模板及计算脚本；没有该 Skill 时也能独立运行。源仓库入口与 Codex 适配器都已接入此规则，不需要全局安装、插件或新增助手。本机目录链接被 Git 忽略，不随公开适配器分发。设计边界见 [决策 0013](docs/decisions/0013-optional-category-research-skill.md)。
+唯一研究 Skill 维护入口是根 [skills/amazon-category-opportunity-research](skills/amazon-category-opportunity-research/SKILL.md)，`.agents/skills/` 只链接它；详细方法与模板共用根 `docs/`、`templates/`。完整 A–G Agent 适配器镜像同一规范，不依赖外仓或再安装一个 Skill。没有完整成本时经济性写“未评估”，不提前要求供应商/工厂/样品。
+
+选品、品类、竞品、需求与市场研究由 PickScout 维护；Listing、Seller Central、FBA、库存订单及运营执行交 auto-amazon。归属调整见 [决策0014](docs/decisions/0014-pickscout-owned-market-research.md)。专业判断和按需协作见[决策0015](docs/decisions/0015-judgment-and-user-controlled-collaboration.md)，商业推荐、唯一当前简报和客户审读见[决策0016](docs/decisions/0016-ranking-current-brief-client-review.md)。
+
+### 维护源与可复用版本
+
+- 在本仓库工作时，研究入口为`skills/amazon-category-opportunity-research/`，共用根目录`docs/`、`templates/`与`scripts/`；该项目入口不作为脱离仓库的独立文件夹安装。
+- 在其他工作区使用时，安装下面的自包含`adapters/codex/pickscout-agent/`，包内包含同源方法、模板和计算工具，不依赖本机目录或运营项目。
+- 可复用规则进入Git版本；私人原件、研究报告、采购清单与运行绑定留在忽略目录。本地源码和分发镜像一致，不等于GitHub或其他使用者的安装已更新；公开安装来源以远端已交付版本为准。
 
 ## 通过 Agent 安装 PickScout Agent
 
@@ -76,6 +85,7 @@ Agent 会调用当前 Codex 的标准安装能力，把兼容适配器安装到�
 │   └── product-requirements-v0.md
 ├── templates/            # 卖家画像、简报、证据、报告和决定模板
 ├── scripts/              # 确定性计算与校验工具
+├── skills/               # 项目市场研究入口，引用同仓规范和模板
 ├── adapters/
 │   └── codex/
 │       └── pickscout-agent/ # 当前 Codex 的兼容安装入口
