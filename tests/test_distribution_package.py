@@ -7,6 +7,18 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 ADAPTER_ROOT = REPO_ROOT / "adapters" / "codex" / "pickscout-agent"
 
 MIRRORED_FILES = {
+    REPO_ROOT / "docs" / "cost-pricing-methodology-v1.0.md": (
+        ADAPTER_ROOT / "references" / "cost-pricing-methodology-v1.0.md"
+    ),
+    REPO_ROOT / "skills" / "amazon-cost-pricing" / "SKILL.md": (
+        ADAPTER_ROOT / "references" / "cost-pricing-skill.md"
+    ),
+    REPO_ROOT / "docs" / "decisions" / "0018-cost-pricing-capability.md": (
+        ADAPTER_ROOT / "references" / "decisions" / "0018-cost-pricing-capability.md"
+    ),
+    REPO_ROOT / "scripts" / "cost_pricing.py": (
+        ADAPTER_ROOT / "scripts" / "cost_pricing.py"
+    ),
     REPO_ROOT / "docs" / "pickscout-methodology-v1.md": (
         ADAPTER_ROOT / "references" / "pickscout-methodology-v1.md"
     ),

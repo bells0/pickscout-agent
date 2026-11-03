@@ -128,6 +128,15 @@ def _format_fixed(value: Decimal, quantum: Decimal) -> str:
     return format(rounded, ".2f")
 
 
+def summarize_cost_amounts(selling_price: Decimal, costs: Iterable[Decimal]) -> Dict[str, Decimal]:
+    """Shared arithmetic; callers own scope, provenance and final display rounding."""
+    if selling_price <= 0:
+        raise ValidationError("selling_price must be greater than zero")
+    total = sum(costs, Decimal("0"))
+    profit = selling_price - total
+    return {"cost": total, "profit": profit, "margin": profit / selling_price}
+
+
 def _validate_scenario(
     scenario_name: str,
     scenario: Any,
@@ -252,16 +261,12 @@ def calculate_unit_economics(document: Any) -> Dict[str, Any]:
         )
         with localcontext() as context:
             context.prec = _working_precision(amounts.values())
-            total_variable_cost = sum(
-                (amounts[field_name] for field_name in COST_FIELDS),
-                Decimal("0"),
+            totals = summarize_cost_amounts(
+                amounts[SELLING_PRICE_FIELD], (amounts[field_name] for field_name in COST_FIELDS)
             )
-            contribution_profit = (
-                amounts[SELLING_PRICE_FIELD] - total_variable_cost
-            )
-            contribution_margin_percent = (
-                contribution_profit / amounts[SELLING_PRICE_FIELD]
-            ) * Decimal("100")
+            total_variable_cost = totals["cost"]
+            contribution_profit = totals["profit"]
+            contribution_margin_percent = totals["margin"] * Decimal("100")
 
             scenario_results[scenario_name] = {
                 "inputs": provenance,

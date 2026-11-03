@@ -25,6 +25,7 @@ data/
 artifacts/
 # Local discovery link; canonical source is skills/amazon-category-opportunity-research/.
 /.agents/skills/amazon-category-opportunity-research
+/.agents/skills/amazon-cost-pricing
 采购清单/
 output/
 *.db

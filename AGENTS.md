@@ -29,6 +29,7 @@
 
 - 选品、品类、竞品、需求与市场研究的方法和产物由 PickScout 统一维护；Listing、Seller Central、FBA、库存/订单与运营执行由 auto-amazon 承接。研究与经营采纳、外部动作授权和执行回执分开。
 - 市场研究 Skill 的唯一维护源为本仓库根 `skills/amazon-category-opportunity-research/`；`.agents/skills/` 仅提供本地发现链接，不作为第二份正文。可按需只读引用历史外仓证据，迁移记录保留原路径、版本和本地依赖。
+- 成本与定价能力的唯一入口为 `skills/amazon-cost-pricing/`，方法见 `docs/cost-pricing-methodology-v1.0.md`。跨产品复用同一账单/反推工具；独立计算不强制重跑九章市场调研。具体同级职责见决定0018。
 - PickScout Agent 的长期核心保存在根目录文档、模板和脚本中；当前 Codex 兼容适配器固定保存在 `adapters/codex/pickscout-agent/`，不得把适配器当作产品本体或在其他路径维护第二份分发包。
 - 不安装或修改用户级 Skill、插件、`~/.codex`、`~/.agents` 或 `$CODEX_HOME`；读取外仓资料不自动授权跨仓修改。
 - 未经用户明确同意，不创建或修改项目 `.codex/config.toml`，不新增 MCP 服务。
@@ -94,7 +95,7 @@ Agent 动态决定研究路径；以下内容应优先交给仓库内可复算�
 
 不要猜测成本、费用、尺寸、重量或其他本应由数据和公式确定的数值。
 
-单位经济使用 `scripts/unit_economics.py`；MOQ、交期和初始现金占用使用 `scripts/hard_gates.py`。对应 `templates/*-input.json` 中的数值仅用于工具冒烟测试，真实研究必须替换为有来源且满足新鲜度要求的输入。
+逐项成本、套装/币种换算与售价反推使用 `scripts/cost_pricing.py`，旧三情景金额接口 `scripts/unit_economics.py` 保持兼容并共享汇总核心；MOQ、交期和初始现金占用使用 `scripts/hard_gates.py`。对应 `templates/*-input.json` 中的数值仅用于工具冒烟测试，真实研究必须替换为有来源和适用日期的输入。金额准备、税和汇差分开，缺项不当零，不把已计结余叫完整净利。
 
 ## 研究产物
 
@@ -138,6 +139,8 @@ Agent 动态决定研究路径；以下内容应优先交给仓库内可复算�
 
 <!-- agent-teamworks:team:start -->
 ## 当前负责人及按需协作
+
+按用户授权增加一个同级成本与定价专业入口，复用本项目方法与计算工具。产品专员继续市场/产品责任，成本专员承担持续核算；简单计算可在原任务直接调用Skill，不自动派生更多角色。当前角色/接入状态从`.agent-teamworks/`核对，不能仅凭本段新建聊天。见`docs/decisions/0018-cost-pricing-capability.md`。
 
 保留一个选品负责人，对完整流程、证据整合及最终建议负责，复用当前任务与主项目目录。普通任务直接推进；复杂探索可由多个 Agent 分工。职责见 `docs/selection-team.md`，最新协作决定见 `docs/decisions/0015-judgment-and-user-controlled-collaboration.md`。
 
