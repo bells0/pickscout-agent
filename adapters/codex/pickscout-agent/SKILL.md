@@ -40,6 +40,7 @@ For substantive research, read `references/pickscout-methodology-v1.md`. Also re
 
 - `references/market-research-v1.md` for category, competitor, keyword, trend, customer-need, or reference-product research: use the same eight-step, six-dimension, nine-chapter method in the current A/B task. This bundled method needs no separate Skill or external repository;
 - `references/market-research-one-page.md` for a concise Chinese explanation and invocation example;
+- `references/cost-pricing-methodology-v1.0.md` for itemized cost, selling-unit/currency normalization, break-even/target prices, fee bands and tax coverage; standalone costing need not repeat a nine-chapter market study;
 - `references/pickscout-sop-v1.md` for a multi-step or resumed task;
 - `references/research-protocol-v0.md` when collecting, evaluating, or deciding whether evidence is sufficient;
 - only the templates needed from `assets/templates/`;
@@ -56,8 +57,12 @@ The bundled references preserve their source-repository path names. In an instal
 | `docs/market-research-v1.md` | `references/market-research-v1.md` |
 | `docs/market-research-one-page.md` | `references/market-research-one-page.md` |
 | `docs/selection-team.md` | `references/selection-team.md` |
+| `docs/cost-pricing-methodology-v1.0.md` | `references/cost-pricing-methodology-v1.0.md` |
+| `skills/amazon-cost-pricing/SKILL.md` | `references/cost-pricing-skill.md` |
 | `templates/` | `assets/templates/` |
 | `scripts/` | `scripts/` |
+
+The bundled cost Skill reference preserves repository-relative paths. Within this package, resolve its `../../docs/`, `../../scripts/`, and `../../templates/` links using the mapping above from this package root. The cost Skill itself is bundled as `references/cost-pricing-skill.md`.
 
 ## Establish the task boundary
 
@@ -145,6 +150,8 @@ Classify each open gap as `hard_gate`, `status_change`, `confidence_only`, or `c
 ## Use deterministic tools
 
 Use sourced, dated, real-task inputs. The bundled JSON values are smoke-test examples only.
+
+For itemized cost and pricing, use `references/cost-pricing-skill.md` and `scripts/cost_pricing.py` with `assets/templates/cost-pricing-input.json`. Keep quotes, actuals, budgets and unknown tax/cost coverage distinct. The legacy calculator remains compatible and shares the money-summary core.
 
 Run three-scenario unit economics with:
 

@@ -18,6 +18,7 @@
 - [研究协议 v0](docs/research-protocol-v0.md)
 - [参与开发与贡献指南](CONTRIBUTING.md)
 - [选品专员职责](docs/selection-team.md)
+- [成本与定价方法 v1.0（未定稿）](docs/cost-pricing-methodology-v1.0.md)
 
 ## 初步能力方向
 
@@ -97,6 +98,18 @@ Agent 会调用当前 Codex 的标准安装能力，把兼容适配器安装到�
 ```
 
 真实任务开始后，原始输入写入被忽略的 `data/`，任务产物写入被忽略的 `artifacts/<task-id>/`；两者都不会进入 Git。
+
+## 成本与定价
+
+逐项费用、套装/币种换算、保本与目标售价、税覆盖和敏感性使用[成本与定价 Skill](skills/amazon-cost-pricing/SKILL.md)及[统一方法](docs/cost-pricing-methodology-v1.0.md)。用户可以在产品任务中直接计算，或在已建立的同级成本专员入口持续处理多个SKU。专员复用产品证据并补充定价所需市场参照，产品负责人保留完整产品方向责任；不代为采购或报税；角色配置不由公开克隆自动创建。
+
+```bash
+python3 scripts/cost_pricing.py templates/cost-pricing-input.json
+```
+
+模板是合成示例，非当期真实费用。真实输入/输出进入被忽略的`artifacts/cost-pricing/<task-id>/`；旧三情景接口继续兼容。源码仅维护根目录一份，分发适配器镜像相同工具。
+
+需要单独分享时，按[导出说明](docs/cost-pricing-sharing.md)生成自包含目录和 ZIP；包内包含方法、计算器、合成输入与原许可证，仅需 Python 3 标准库。auto-amazon 等仓库保存导出快照，后续更新仍从 PickScout 重新导出。
 
 ## 开始第一个试点
 

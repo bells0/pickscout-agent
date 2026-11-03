@@ -43,6 +43,7 @@ v0 不重新开发通用 Agent 运行时、聊天前端或固定流程系统。C
 12. 选品以商业价值和用户决策为首要原则：不把竞品属性或 Agent 偏好变成硬门槛，不提前套用后续阶段要求，只补会改变当前决定的信息；允许功能替代品、多供应商比较和有条件的初步建议。具体规则见 [首要选品原则](pickscout-methodology-v1.md#11-首要选品原则) 与 [决策 0012](decisions/0012-business-first-selection-principles.md)。
 13. 产品/照片/ASIN/链接及有边界类目均可启动市场研究；A/B 内环按 [八步研究、六维判断和九章报告](market-research-v1.md) 执行，默认本地 HTML 主报告。用户要求其他格式时遵从。
 14. 市场研究与 Skill 由 PickScout 维护，auto-amazon 聚焦运营执行。根 `skills/amazon-category-opportunity-research/` 是市场研究入口唯一维护源，完整 Agent 适配器保持自包含。见 [0014](decisions/0014-pickscout-owned-market-research.md)。
+15. 成本与定价采用独立项目Skill与共用确定性工具，可由已授权同级专员持续处理多个产品；输入单位、成本覆盖、价格费档和税务口径清晰，产品负责人保留市场取舍责任。见[0018](decisions/0018-cost-pricing-capability.md)。
 
 对应产品决策见 [0001-amazon-us-fba-evidence-first.md](decisions/0001-amazon-us-fba-evidence-first.md) 和 [0002-codex-conversation-first-agent.md](decisions/0002-codex-conversation-first-agent.md)。
 

@@ -1,0 +1,195 @@
+{
+  "market": "Amazon US",
+  "currency": "USD",
+  "as_of": "2026-11-03",
+  "selling_unit": "合成示例：1件产品及其包装为一个销售单元",
+  "currency_per_reporting_unit": {
+    "CNY": {
+      "value": "7",
+      "source": "合成预算汇率",
+      "as_of": "2026-11-03"
+    }
+  },
+  "cases": [
+    {
+      "id": "synthetic-base",
+      "costs": [
+        {
+          "id": "goods",
+          "label": "goods",
+          "category": "product",
+          "kind": "amount",
+          "value": "7",
+          "status": "budget",
+          "source": "合成示例，不是真实报价或费率",
+          "as_of": "2026-11-03",
+          "currency": "CNY",
+          "covers": [
+            "goods",
+            "tube"
+          ]
+        },
+        {
+          "id": "outer-pack",
+          "label": "outer-pack",
+          "category": "packaging",
+          "kind": "amount",
+          "value": "0.50",
+          "status": "budget",
+          "source": "合成示例，不是真实报价或费率",
+          "as_of": "2026-11-03"
+        },
+        {
+          "id": "inbound-all-in",
+          "label": "inbound-all-in",
+          "category": "inbound",
+          "kind": "amount",
+          "value": "1",
+          "status": "budget",
+          "source": "合成示例，不是真实报价或费率",
+          "as_of": "2026-11-03",
+          "covers": [
+            "inbound",
+            "import_duty"
+          ]
+        },
+        {
+          "id": "placement",
+          "label": "placement",
+          "category": "placement",
+          "kind": "amount",
+          "value": "0.20",
+          "status": "budget",
+          "source": "合成示例，不是真实报价或费率",
+          "as_of": "2026-11-03"
+        },
+        {
+          "id": "fba",
+          "label": "fba",
+          "category": "fulfillment",
+          "kind": "amount",
+          "value": "4",
+          "status": "budget",
+          "source": "合成示例，不是真实报价或费率",
+          "as_of": "2026-11-03"
+        },
+        {
+          "id": "storage",
+          "label": "storage",
+          "category": "storage",
+          "kind": "amount",
+          "value": "0.10",
+          "status": "budget",
+          "source": "合成示例，不是真实报价或费率",
+          "as_of": "2026-11-03"
+        },
+        {
+          "id": "monthly",
+          "label": "monthly",
+          "category": "overhead",
+          "kind": "amount",
+          "value": "40",
+          "status": "budget",
+          "source": "合成示例，不是真实报价或费率",
+          "as_of": "2026-11-03",
+          "allocation_units": "50"
+        },
+        {
+          "id": "setup",
+          "label": "setup",
+          "category": "launch",
+          "kind": "amount",
+          "value": "20",
+          "status": "budget",
+          "source": "合成示例，不是真实报价或费率",
+          "as_of": "2026-11-03",
+          "allocation_units": "50"
+        },
+        {
+          "id": "referral",
+          "label": "referral",
+          "category": "referral",
+          "kind": "rate",
+          "value": "0.15",
+          "status": "budget",
+          "source": "合成示例，不是真实报价或费率",
+          "as_of": "2026-11-03",
+          "minimum_amount": "0.30"
+        },
+        {
+          "id": "ads",
+          "label": "ads",
+          "category": "advertising",
+          "kind": "rate",
+          "value": "0.16",
+          "status": "budget",
+          "source": "合成示例，不是真实报价或费率",
+          "as_of": "2026-11-03"
+        },
+        {
+          "id": "losses",
+          "label": "losses",
+          "category": "losses",
+          "kind": "rate",
+          "value": "0.03",
+          "status": "budget",
+          "source": "合成示例，不是真实报价或费率",
+          "as_of": "2026-11-03"
+        },
+        {
+          "id": "fx",
+          "label": "fx",
+          "category": "fx",
+          "kind": "rate",
+          "value": "0.01",
+          "status": "budget",
+          "source": "合成示例，不是真实报价或费率",
+          "as_of": "2026-11-03"
+        },
+        {
+          "id": "income-tax",
+          "label": "所得税",
+          "category": "income_tax",
+          "kind": "amount",
+          "value": null,
+          "status": "unknown",
+          "source": "合成示例尚未计算",
+          "as_of": "2026-11-03",
+          "reason": "没有实际主体税基与分摊"
+        }
+      ],
+      "price_bands": [
+        {
+          "id": "synthetic-low",
+          "min_price": "0.01",
+          "max_price_exclusive": "10",
+          "overrides": {
+            "fba": {
+              "value": "3",
+              "status": "budget",
+              "source": "合成示例，不是真实报价或费率",
+              "as_of": "2026-11-03"
+            }
+          }
+        },
+        {
+          "id": "synthetic-regular",
+          "min_price": "10",
+          "max_price_exclusive": null
+        }
+      ],
+      "prices": [
+        {
+          "value": "20",
+          "status": "budget",
+          "source": "合成示例，不是真实报价或费率",
+          "as_of": "2026-11-03"
+        }
+      ],
+      "targets": {
+        "unit_profit": "3",
+        "margin": "0.20"
+      }
+    }
+  ]
+}

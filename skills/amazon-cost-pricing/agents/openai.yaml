@@ -1,0 +1,4 @@
+interface:
+  display_name: "Amazon 成本与定价专家"
+  short_description: "拆解商品与套装成本，反推保本和目标售价，比较利润、税费口径与敏感性"
+  default_prompt: "使用 $amazon-cost-pricing 复用当前产品资料，核算逐项成本、保本与目标售价，给出可复算的价格方案和明确建议。"
